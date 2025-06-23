@@ -2,6 +2,8 @@
 
 A Streamlit web application that allows users to upload school reports in PDF format and visualize school performance trends over time.
 
+Try it here: https://educationreportanalyser.streamlit.app/
+
 ## Features
 
 - Upload multiple school reports in PDF format
