@@ -59,6 +59,8 @@ The app extracts performance indicators by:
 
 If tables cannot be properly extracted, the app will notify the user.
 
+![Graph Image](assets/graph.png)
+
 ## Deployment to Streamlit Cloud
 
 1. Push your code to GitHub:
