@@ -1,111 +1,88 @@
-# School Reports Analytics Web App
+# 📊 School Reports Analytics Web App
 
-A Streamlit web application that allows users to upload school reports in PDF format and visualize school performance trends over time.
+A Streamlit web application that processes school report PDFs to extract key metadata and performance indicators. The app visualizes performance trends using interactive charts and allows users to export cleaned data to CSV.
 
-Try it here: https://educationreportanalyser.streamlit.app/
+🔗 **Live Demo:** [https://educationreportanalyser.streamlit.app/](https://educationreportanalyser.streamlit.app/)
 
-## Features
+---
 
-- Upload multiple school reports in PDF format
-- Extract metadata and performance indicators from PDF content
-- Analyze performance indicators (Very Good, Good, Needs Improvement)
-- Visualize trends across reports, semesters, and years
-- Privacy-focused: no personal data is stored or processed
-- Export data to CSV for further analysis
+## 📄 What It Does
 
-## Setup and Installation (Local Development)
+- Upload multiple school reports in PDF format  
+- Extract metadata: Year, Semester, Report Number  
+- Analyze performance indicators: Very Good, Good, Needs Improvement  
+- Visualize trends over semesters and years  
+- Export structured data to CSV  
 
-1. Clone the repository:
-   ```
-   git clone <url>
-   cd education_report_analyser
-   ```
+---
 
-2. Create a virtual environment and install dependencies:
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
+## 🧰 Key Features
 
-3. Run the Streamlit app:
-   ```
-   streamlit run app.py
-   ```
+- 📂 Supports batch PDF uploads  
+- 🧠 Regex-based metadata extraction  
+- 🗂 Table-based performance analysis using PyMuPDF  
+- 📊 Interactive charts using Plotly  
+- 🔒 Privacy-focused: all processing is in-memory  
+- 🛠️ Modular, scalable Python code structure  
 
-## Usage
+---
 
-1. Upload one or more school report PDFs using the file uploader
-2. The app will automatically extract metadata and performance indicators from the PDF content
-3. View the generated charts showing performance trends over time
-4. Optionally export the data to CSV for further analysis
+## 🧩 Notes
 
-## Data Extraction
+- This project is designed to be a **flexible foundation** for school reporting and can be extended to handle other structured PDF types.  
+- No personal student or teacher data is stored. All data is processed in-memory and cleared when sessions end.  
+- The code is **intentionally modular and scalable** to allow easy expansion — new performance indicators, different PDF layouts, and additional export formats can be added without restructuring the core logic.  
 
-The application extracts the following information from the PDF content:
+---
 
-### Metadata Extraction
-- Year
-- Semester
-- Report number
-
-The app uses regex pattern matching to identify metadata in the PDF text using the pattern: "Semester X, YYYY - Progress Report Z"
-
-### Performance Indicator Extraction
-The app extracts performance indicators by:
-1. Identifying tables in the PDF that contain assessment data
-2. Analyzing each cell in these tables to count occurrences of:
-   - "Very Good"
-   - "Good (meets expectations)"
-   - "Needs Improvement" or similar phrases
-
-If tables cannot be properly extracted, the app will notify the user.
+## 🖼️ Example Output
 
 ![Graph Image](assets/graph.png)
 
-## Deployment to Streamlit Cloud
+---
 
-1. Push your code to GitHub:
-   ```
-   git remote add origin <url>
-   git branch -M main
-   git push -u origin main
-   ```
+## 🏗️ Optional Local Setup
 
-2. Deploy to Streamlit Cloud:
-   - Go to [Streamlit Cloud](https://streamlit.io/cloud)
-   - Sign in with your GitHub account
-   - Click "New app"
-   - Select your repository, branch (main), and the main file path (app.py)
-   - Click "Deploy"
+**Clone the repository:**
 
-3. Access your app:
-   - Once deployed, your app will be available at a URL like: `https://xxxxx.streamlit.app`
-   - The app is now publicly accessible (or can be password-protected through Streamlit Cloud settings)
+```bash
+git clone <repo_url>
+cd education_report_analyser
+```
 
-## Privacy
+Create a virtual environment and install dependencies:
 
-- No personal student or teacher information is processed
-- All data is processed in-memory during the session
-- No data is stored long-term
-- Session data is cleared upon browser refresh or session end
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
 
-## Dependencies
+Run the Streamlit app:
 
-The application uses the following main dependencies:
-- streamlit>=1.22.0
-- pandas>=1.5.3
-- numpy>=1.24.3
-- matplotlib>=3.7.1
-- plotly>=5.14.1
-- PyMuPDF>=1.21.1
+```bash
+streamlit run app.py
+```
 
-## Streamlit Cloud Limitations
+---
 
-- Free tier provides 1GB RAM which is sufficient for most PDF processing
-- No persistent storage (all data exists only during the user session)
-- App restarts when new code is pushed to GitHub
+## ⚙️ Dependencies
 
-## License
+- streamlit >= 1.22.0  
+- pandas >= 1.5.3  
+- numpy >= 1.24.3  
+- matplotlib >= 3.7.1  
+- plotly >= 5.14.1  
+- PyMuPDF >= 1.21.1  
 
-MIT 
+---
+
+## 👤 About
+
+Created by Brett C. as part of my document automation and AI workflow portfolio. I build modular, scalable Python tools that process, structure, and visualize complex document data. This project is designed as a reusable, privacy-conscious solution that can be expanded for broader document types.
+
+---
+
+## 📝 License
+
+MIT
